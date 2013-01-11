@@ -1,0 +1,7 @@
+.project
+.settings
+.classpath
+.cache
+target
+project
+infinitest.filters
