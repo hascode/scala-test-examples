@@ -63,5 +63,14 @@ class DifferentMatcherExample extends FlatSpec with MustMatchers {
     // combined expressions with and / or
     users must (have size (3) and contain key (3))
     users must (contain value ("Mr. X") or contain value ("Joe"))
+
+    // class properties
+    val cookieRecipe = Recipe("cookieRecipe", List("Flour", "Sugar", "Eggs", "Love"), 30)
+    cookieRecipe must have(
+      'name("cookieRecipe"),
+      'ingredients(List("Flour", "Sugar", "Eggs", "Love")),
+      'bakingMinutes(30))
   }
 }
+
+case class Recipe(name: String, ingredients: List[String], bakingMinutes: Int)

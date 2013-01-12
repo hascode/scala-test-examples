@@ -7,30 +7,20 @@ import org.scalatest.matchers.ShouldMatchers
 import org.scalatest.selenium.WebBrowser
 import org.scalatest.FlatSpec
 import org.scalatest.GivenWhenThen
+import org.openqa.selenium.htmlunit.HtmlUnitDriver
 
-@RunWith(classOf[JUnitRunner])
 class WebsiteSpec extends FlatSpec with GivenWhenThen with ShouldMatchers with WebBrowser {
-  implicit val webDriver: WebDriver = new FirefoxDriver
+  implicit val webDriver: WebDriver = new HtmlUnitDriver
 
-  "My Website" should "load the start page correctly" in {
-    given("a browser")
-
-    when("the browser loads the home page")
+  "My Website" should "search for a given term" in {
     go to ("http://www.hascode.com/")
-
-    then("the title should equal 'hasCode.com'")
     title should be("hasCode.com")
-  }
-
-  ignore should "search for a given term" in {
-    given("we're on the start page")
-
-    when("the 'jee' is entered in the search box")
     click on id("s")
-    textField("s").value = "jee"
+    textField("s").value = "lucene"
     submit()
-
-    then("the search results page should be displayed")
-    title should be("hasCode.com [» Search Results »] jee")
+    title should include regex ("hasCode.com.+Search Results.+lucene")
+    pageSource should include("Lucene Snippets: Index Stats")
+    pageSource should include("Lucene Snippets: Faceting Search")
+    pageSource should include("Hibernate Search Faceting: Discrete and Range Faceting by Example")
   }
 }
