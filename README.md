@@ -1,6 +1,6 @@
 # Scala Test Examples
 
-Some short examples on how to write test scenarios with Scala, Scala Test and Selenium WebDriver and how to add JUnit support.
+Some short examples on how to write test scenarios with Scala, ScalaTest and Selenium WebDriver and how to add JUnit support or write your tests in the BDD syntax using given-when-then.
 
 **Frameworks used**
 
@@ -8,7 +8,7 @@ Some short examples on how to write test scenarios with Scala, Scala Test and Se
 * junit 4.11
 * selenium-java 2.25.0
 
-Please feel free to take a look at my blog at [www.hascode.com] for the full tutorial and resources.
+Please feel free to take a look at my blog at [www.hascode.com] for the full tutorial and more resources.
 
 ---
 

@@ -4,9 +4,6 @@ import org.scalatest.junit.JUnitRunner
 import org.scalatest.FlatSpec
 import org.scalatest.matchers.ShouldMatchers
 
-/**
- * http://nimblepros.com/media/36628/string%20calculator%20kata.pdf
- */
 @RunWith(classOf[JUnitRunner])
 class StringCalculatorSpec extends FlatSpec with ShouldMatchers {
 
